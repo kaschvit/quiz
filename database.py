@@ -2,7 +2,6 @@
 from config import DB_NAME
 
 async def create_tables():
-    """Создание таблиц базы данных"""
     async with aiosqlite.connect(DB_NAME) as db:
         #Таблица для состояния квиза
         await db.execute('''CREATE TABLE IF NOT EXISTS quiz_state 
